@@ -14,11 +14,17 @@ const inputUpdate = (event) => {
 }
 const addItem = () => {
 
+    if(textInput == ""){
+        alert("Not Allow")
+    }
+    else{
+        const finalItems = [...fruits , textInput];
+        setFruits(finalItems)
+        setTextInput("")
+    }
     
     
-    const finalItems = [...fruits , textInput];
-    setFruits(finalItems)
-    setTextInput("")
+    
 
 
 }
