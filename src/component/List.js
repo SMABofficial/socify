@@ -30,13 +30,14 @@ function List() {
         
     }
 
-    const deleteCar = (delCar) => {
-        const res = cars.filter((singCar) =>{
-            return singCar !== delCar;
-        })
+    const deleteCar = (index) => {
+        // const res = cars.filter((singCar) =>{
+        //     return singCar !== delCar;
+        // })
 
-        setCars(res)
-
+        // setCars(res)
+        const newCarsArray = cars.toSpliced(index , 1)
+        setCars(newCarsArray)
     }
 
     const entered =(event)=>{
@@ -57,7 +58,7 @@ function List() {
                 {
                     cars.map ((delCar , index )=>{
                         return <li key={index}>{delCar}
-                        <button onClick={ ()=>{deleteCar(delCar)} }> X </button>
+                        <button onClick={ ()=>{deleteCar(index)} }> X </button>
                         </li>
                     })
                 }
