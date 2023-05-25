@@ -12,9 +12,13 @@ const inputUpdate = (event) => {
     setTextInput(event.target.value);
 
 }
+
+
+
+
 const addItem = () => {
 
-    if(textInput == ""){
+    if(textInput === ""){
         alert("Not Allow")
     }
     else{
@@ -32,13 +36,16 @@ const addItem = () => {
 
     return(
         <div>
-           <input type="text" onChange={inputUpdate} value={textInput} autoFocus />
+           <input type="text" onChange={inputUpdate} value={textInput}  />
            <button onClick={addItem}> add</button>
 
           <ul>
             {
                 fruits.map((item , index) => {
-                    return <li key={index}>{item}</li>
+                    return <li key={index}>
+                        {item}
+                        <button >X</button>
+                        </li>
                 })
             }
           </ul>
