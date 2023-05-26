@@ -50,20 +50,28 @@ function List() {
 
 
     return(
-        <div>
-            <input type="text" placeholder="Enter Any Name" onChange={newItem} onKeyUp={entered} value={newCar} ref={focusInput} />
-            <button onClick={addCar}>Add Me</button>
-
-            <ul>
+        <div className='container'>
+            <div className='text-center'>
+             <h1 className='text-center heading'>To Do List</h1>
+             </div>
+        
+            <div className='inputbtn'>
+            <input type="text" placeholder="Enter Any Name" onChange={newItem} onKeyUp={entered} value={newCar} ref={focusInput} className='input' />
+            <button onClick={addCar} className='btn btn-info'>Add Me</button>
+            </div>
+            <div>
+            <ul className='list'>
                 {
                     cars.map ((delCar , index )=>{
-                        return <li key={index}>{delCar}
-                        <button onClick={ ()=>{deleteCar(index)} }> X </button>
+                        return  <li key={index} className='listItem'>{delCar}
+                        <button onClick={ ()=>{deleteCar(index)} } className='btn btn-outline-danger'> X </button>
                         </li>
                     })
                 }
             </ul>
+            </div>
         </div>
+      
     );
 }
 export default List;
